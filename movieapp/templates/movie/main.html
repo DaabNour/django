@@ -1,0 +1,194 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="This is to do list implemented using Django by Dennis Ivy who is a full stack web developer.">
+
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>To Do Items</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+   
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+ 
+  
+    <!-- Include Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+    <!-- Include Bootstrap JS and jQuery -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+
+
+    <style>
+        body {
+    font-family: sans-serif;
+    display: center;
+    color: black;
+    background: linear-gradient(0deg, rgb(255, 255, 255) 0%,#547793 100%);
+    border-radius: 40px;
+    padding: 25px 25px;
+    align-content:center;
+    border: 5px solid rgb(255, 255, 255);
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 30px 30px -20px;
+    margin: 150px;
+    margin-top: 50px;
+    margin-left: 500px;
+    width:550px;
+    display: center;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+
+.input {
+    width: 100%;
+    background: #eef1f6;
+    border: none;
+    padding: 15px 20px;
+    border-radius: 20px;
+    margin-top: 15px;
+    box-shadow: #cff0ff 0px 10px 10px -5px;
+     border-inline: 2px solid transparent;
+}
+
+input:placeholder {
+  color: rgb(170, 170, 170);
+}
+.button {
+    display: block;
+    width: 50%;
+    font-weight: bold;
+    background: linear-gradient(45deg, #407c87 0%, #a5dbdd 100%);
+    color: white;
+    padding-block: 15px;
+    margin: 20px auto;
+    border-radius: 20px;
+    box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 20px 10px -15px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+}
+.button:hover {
+  transform: scale(1.03);
+  box-shadow: rgba(133, 189, 215, 0.8784313725) 0px 23px 10px -20px;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+label {
+    padding-top: 10px;
+    display: flex;
+}
+
+
+.h3{
+font-family: sans-serif;     
+color: #407c87;
+text-align:center;
+   }
+
+.btn-doctor {
+  padding: 10px 20px;
+  border: 2px solid #407c87;
+  background-color: #fff;
+  color: #2f7693;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  margin: 4px;
+}
+
+.btn-doctor:hover {
+  background-color: #2f7693;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.fancy {
+  background-color: #d3e1e2;
+  border: 2px solid #355891;
+  border-radius: 0px;
+  box-sizing: border-box;
+  color: #355891;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 390;
+  letter-spacing: 2px;
+  margin: 0;
+  outline: none;
+  overflow: visible;
+  padding: 8px 30px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: none;
+  transition: all 0.3s ease-in-out;
+  user-select: none;
+  font-size: 13px;
+}
+
+.text-center{
+    font-family: sans-serif;     
+    color: #BFD37A;
+    text-align:center;
+}
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+}
+
+.table th {
+  background-color: #a5bddd;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  padding: 12px;
+}
+
+.table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  font-family: sans-serif;     
+
+}
+
+.navbar-nav{
+  color:#407c87 ;
+}
+</style>
+</head>
+
+<body>
+
+    <div class="container">
+        {% block content %} {% endblock content %}
+    </div>
+
+</body>
+
+
+
+</html>

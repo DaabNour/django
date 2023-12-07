@@ -1,0 +1,55 @@
+{% extends 'movie/main.html' %}
+{% block content %}
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'addreview' %}">Add Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'movie_list' %}">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <h1 class="text-center">My Reviews List</h1>
+
+        <form method="GET" class="mb-3">
+            <input type='text' name='search-area' class="form-control" value="{{ search_input }}"
+                placeholder="Search for a movie">
+            <input type="submit" class="fancy" value='Search'>
+        </form>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Movie </th>
+                    <th>Actions   </th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for review in reviews %}
+                    <tr>
+                        <td>{{ review.movie }}</td>
+                        <td>
+                            <a href="{% url 'review' pk=review.pk %}" class="btn btn-doctor">View</a>
+                            <a href="{% url 'reviewupdate' pk=review.pk %}" class="btn btn-doctor">Edit</a>
+                            <a href="{% url 'reviewdelete' review.id %}" class="btn btn-doctor">Delete</a>
+                        </td>
+                    </tr>
+                {% empty %}
+                    <tr>
+                        <td colspan="2" class="text-center"><h3>No items in the list</h3></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock content %}

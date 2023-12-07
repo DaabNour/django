@@ -1,0 +1,40 @@
+{% extends 'movie/main.html' %}
+{% block content %}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="collapse navbar-collapse" id="navbarNav">
+           <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'addreview' %}">Add Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'movie_list' %}">Movies</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+<h1 class="text-center">my movies list </h1>
+            
+
+<table class="table">
+      <thead>
+                <tr>
+                    <th>MoItem  </th>
+                    <th>Actions   </th>
+                </tr>
+            </thead>
+        <tbody>
+    {% for movie in movies %}
+    <tr>
+        <td>{{movie.title}}</td>
+        <td class="btn btn-doctor"><a href="{% url 'movie' movie.id %}">Details </a></td>
+         <td class="btn btn-doctor"><a href="{% url 'addreview' %}">Add Review</a></td>
+    {% empty %}
+        <h3>no items in Mist </h3>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock content %}
